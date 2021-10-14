@@ -12,7 +12,7 @@ def call(Map pipelineConfig = [:]) {
    stage("prepare"){
       node('master') {
          //CARGA CONFIGURACIÓN
-         
+         checkout scm
          pjc = ConfigParser.parse(steps, env, pipelineConfig)
       }
    }
